@@ -78,5 +78,19 @@ public class Film {
     public int hashCode() {
         return Objects.hash(title, releaseYear, creator, filmNr, genre, company);
     }
+
+    @Override
+    public String toString() {
+        // gross
+        return String.format("Movie Details:\n" +
+            "-------------------------------\n" +
+            "Title       : %s\n" +
+            "Creator     : %s\n" +
+            "Year        : %d\n" +
+            "Genre       : %s\n" +
+            "Company     : %s\n" +
+            "Movie Number: %d\n", 
+            title, creator, releaseYear, genre, company, filmNr);
+    }
 }
 

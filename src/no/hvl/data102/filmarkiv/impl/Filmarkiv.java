@@ -53,10 +53,11 @@ public class Filmarkiv implements FilmarkivADT {
         return wasDeleted;
     }
 
+
     public Film[] searchTitle(String delstreng) {
         int count = 0;
         for (int i = 0; i < numberOfDefinedElements; i++) {
-            if (films[i].getTitle().equals(delstreng)) {
+            if (films[i].getTitle().toLowerCase().contains(delstreng.toLowerCase())) {
                 count++;
             }
         }
@@ -65,18 +66,19 @@ public class Filmarkiv implements FilmarkivADT {
         int index = 0;
 
         for (int i = 0; i < numberOfDefinedElements; i++) {
-            if (films[i].getTitle().equals(delstreng)) {
+            if (films[i].getTitle().toLowerCase().contains(delstreng.toLowerCase())) {
                 matchingFilms[index++] = films[i];
             }
         }
 
         return matchingFilms;
-    } 
+    }
 
+    
     public Film[] searchCreator(String delstreng) {
         int count = 0;
         for (int i = 0; i < numberOfDefinedElements; i++) {
-            if (films[i].getCreator().equals(delstreng)) {
+            if (films[i].getCreator().toLowerCase().contains(delstreng.toLowerCase())) {
                 count++;
             }
         }
@@ -85,7 +87,7 @@ public class Filmarkiv implements FilmarkivADT {
         int index = 0;
 
         for (int i = 0; i < numberOfDefinedElements; i++) {
-            if (films[i].getCreator().equals(delstreng)) {
+            if (films[i].getCreator().toLowerCase().contains(delstreng.toLowerCase())) {
                 matchingFilms[index++] = films[i];
             }
         }

@@ -1,6 +1,0 @@
-target.FilmarkivTest
-target.no.hvl.data102.filmarkiv.adt.FilmarkivADT
-target.no.hvl.data102.filmarkiv.klient.FilmarkivMain
-target.no.hvl.data102.filmarkiv.impl.Film
-target.no.hvl.data102.filmarkiv.impl.Sjanger
-target.no.hvl.data102.filmarkiv.impl.Filmarkiv
