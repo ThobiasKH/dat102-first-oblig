@@ -29,28 +29,15 @@ public class Filmarkiv implements FilmarkivADT {
     } 
 
     public boolean deleteFilm(int filmNr) {
-        int indexOfFilm = Integer.MAX_VALUE;
-        for (int i = 0; i < films.length; i++) {
-            Film f = films[i];
-            if (f.getFilmNr() == filmNr) {
-                indexOfFilm = i;
-                break;
+        for (int i = 0; i < numberOfDefinedElements; i++) {
+            if (films[i].getFilmNr() == filmNr) {
+                films[i] = films[numberOfDefinedElements - 1];
+                films[numberOfDefinedElements - 1] = null;
+                return true;
             }
         }
 
-        boolean wasDeleted = false;
-        for (int currentIndex = indexOfFilm; currentIndex < numberOfDefinedElements - 1; currentIndex++) {
-            int nextIndex = currentIndex + 1;
-            films[currentIndex] = films[nextIndex];
-            wasDeleted = true;
-        }
-        if (wasDeleted) {
-            // films[numberOfDefinedElements--] = null;
-            films[numberOfDefinedElements - 1] = null;
-            numberOfDefinedElements--;
-        }
-
-        return wasDeleted;
+        return false;
     }
 
 
